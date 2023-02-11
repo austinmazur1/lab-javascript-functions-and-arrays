@@ -97,25 +97,79 @@ const wordsUnique = [
   'bring'
 ];
 
-const duplictes = [];
+/*created an array that will host the duplicates
+we then do a for loop of the array, and compare it to our empty
+duplicate array. if the element isnt found it will push the element to the array
 
-function uniquifyArray(words) {
-  for (let i = 0; i < words.length) {
-    if (words.indexOf())
+was unable to get it to return null
+*/
+function uniquifyArray(array) {
+  const duplicatesArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (duplicatesArray.indexOf(array[i]) === -1) {
+      duplicatesArray.push(array[i]);
+    }
   }
-
+  return duplicatesArray
 }
 
 
 
 // Iteration #6: Find elements
+
+/*for this I think we will use the .includes() method
+this method determines whether an array includes
+a certain value, returns true or false
+
+Do we pass two arguments to the function, 
+one being the word we are searching for
+and another being the array?
+
+Managed to do the for loop
+and checked the array if the parameter of word 
+shows up
+
+still didnt return null 
+*/
+
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(array, word) {
+  for (let i = 0; i < array.length; i++) {
+    if (array.includes(word)) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
 
 
 
 // Iteration #7: Count repetition
+
+/* we will need to have two parameters, 
+first one is the array, the second is
+the word we wanna count how many times
+it appears. We wanna return the amount 
+of times the word appears
+
+I think we first want to declare a counter variable
+then we can do a for loop through the array
+maybe the .indexOf() method to check if the word exists
+
+this one gave me some issues, lots of google
+and stack overflow. still not firing all tests
+
+so we take in the array and the word
+we want to count the occurences
+
+initialize a var number
+initialize a position which is 0.
+
+i used a while if statment, trying to understand 
+and practice these. so we use an index of to 
+*/
 const wordsCount = [
   'machine',
   'matter',
@@ -130,7 +184,32 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(array, word) {
+  let number = 0;
+  position = 0;
+  while(true) {
+    position = array.indexOf(word, position);
+    if (position != -1) {
+      number++;
+      position += word.length;
+    } else {
+      break;
+    }
+  }
+  return number;
+}
+
+//first attempt
+
+// function howManyTimes(array, word) {
+// let counter = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     if (array.indexOf(word) == array.lastIndexOf(word)) {
+//         counter += array
+//         return counter
+//     }
+//   }
+// }
 
 
 
