@@ -1,19 +1,45 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(num1, num2) {
+  if(num1 > num2) {
+    return num1;
+  }
+  else if (num2 > num1) {
+    return num2;
+  } else {return num1, num2};
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(array) {
+  let longest = " ";
+  for (let i = 0; i < array.length; i++) {
+    if (words.length < array[i].length) {
+      longest = array[i]
+    }
+  }
+}
+
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+/* delcare our sum variable, 
+use a for loop that iterates over the array
+for every iteration it will add the elements to the sum variable
+ */
+
+function sumNumbers(array) { 
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+}
 
 
 
@@ -26,13 +52,32 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(newArray) {
+ let total = 0;
+ let count = 0;
+ newArray.forEach(function(item, index) {
+  total += item;
+  count++;
+ }); 
+ return total / count
+}
+
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArray) {
+  let averageOfWords = 0;
+  let numberOfWords = wordsArray.split(" ").length;
+
+  for (let i = 0; i < wordsArray.length; i++) {
+    averageOfWords += wordsArray[i].length;
+  }
+  let avgCharCount = averageOfWords / wordsArray.length;
+  return avgCharCount;
+  }
+  
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,7 +97,14 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+const duplictes = [];
+
+function uniquifyArray(words) {
+  for (let i = 0; i < words.length) {
+    if (words.indexOf())
+  }
+
+}
 
 
 
