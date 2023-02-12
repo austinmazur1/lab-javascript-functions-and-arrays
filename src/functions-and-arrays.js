@@ -13,15 +13,34 @@ function maxOfTwoNumbers(num1, num2) {
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
+// function findLongestWord(array) {
+//   const longestWordArr = [];
+//   let wordVar = array.sort(function(a, b) {
+//     return b.length - a.length;
+//   });
+//   longestWordArr.push(wordVar[0].length);
+//   console.log(longestWordArr)
+// }
+
+/* this one gave me some trouble. stack oevrflow to the rescue
+creating an var w/ empty string. we then for loop through the array
+with array.length. each iteration we are looking to see if our string 
+var length is less than the current array word.
+
+if so we add the word to the var
+
+we then use the reduce method
+*/
+
 function findLongestWord(array) {
-  let longest = " ";
+  let word = "";
   for (let i = 0; i < array.length; i++) {
-    if (words.length < array[i].length) {
-      longest = array[i]
+    if (word.length < array[i].length) {
+      word = array[i];
     }
   }
+  return word;
 }
-
 
 
 
@@ -44,7 +63,12 @@ function sumNumbers(array) {
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += parseInt(array[i])
+  }
+}
 
 
 
@@ -65,16 +89,21 @@ function averageNumbers(newArray) {
 
 
 // Level 2: Array of strings
+/* create var that will hold the sum of the array
+make a for loop that iterates through array and adds to our sum variable
+we then initialize var for the average and set that = to the sum divided by the length of the array
+*/
+
+
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(wordsArray) {
-  let averageOfWords = 0;
-  let numberOfWords = wordsArray.split(" ").length;
+  let sumOfWords = 0;
 
   for (let i = 0; i < wordsArray.length; i++) {
-    averageOfWords += wordsArray[i].length;
+    sumOfWords += wordsArray[i].length;
   }
-  let avgCharCount = averageOfWords / wordsArray.length;
+  let avgCharCount = sumOfWords / wordsArray.length;
   return avgCharCount;
   }
   
